@@ -17,7 +17,7 @@ public class FactBook {
         setting the facts
          */
         mFactPage[0] = new FactPage("Fact 1","Your brain is your hungriest organ! 20% of what you eat feeds it.","#39add1",
-                new Choice("Fact name",1),new Choice("next fact name",2));
+                new Choice("Eyes",1),new Choice("Digestive System",2));
 
         mFactPage[1] = new FactPage("Fact 2","Your eyes always close when you sneeze","#3079ab",
                 new Choice("Fact name",3),new Choice("next fact name",4));
