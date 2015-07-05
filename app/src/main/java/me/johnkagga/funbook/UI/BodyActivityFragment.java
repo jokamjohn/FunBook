@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
@@ -23,6 +24,7 @@ public class BodyActivityFragment extends Fragment {
     @InjectView(R.id.textViewFact)TextView mFactText;
     @InjectView(R.id.buttonup)Button mButtonup;
     @InjectView(R.id.buttondown)Button mButtondown;
+    @InjectView(R.id.factrelativelayout)RelativeLayout mRelativeLayout;
 
     private FactPage mFactPage;
     private FactBook mFactBook = new FactBook();
@@ -38,20 +40,23 @@ public class BodyActivityFragment extends Fragment {
         ButterKnife.inject(this,rootView);
 
 
-        loadPage();
+        loadPage(0);
 
         return rootView;
     }
 
-    public void loadPage(){
+    public void loadPage(int nextPage){
         //Getting reference to the created content
-        mFactPage = mFactBook.getPage(0);
+        mFactPage = mFactBook.getPage(nextPage);
         //getting the different values
         String factNumber = mFactPage.getFactNumber();
         mFactNumber.setText(factNumber);
 
         String fact = mFactPage.getFactText();
         mFactText.setText(fact);
+
+        int backgroundColor = mFactPage.factColor(mFactPage.getColor());
+        mRelativeLayout.setBackgroundColor(backgroundColor);
 
         String buttonLabel = mFactPage.getChoice1().getButtonText();
         mButtonup.setText(buttonLabel);
@@ -63,7 +68,16 @@ public class BodyActivityFragment extends Fragment {
         mButtonup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int nextPage = mFactPage.getChoice1().getNextPage();
+                loadPage(nextPage);
+            }
+        });
 
+        mButtondown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int nextPage = mFactPage.getChoice2().getNextPage();
+                loadPage(nextPage);
             }
         });
 
