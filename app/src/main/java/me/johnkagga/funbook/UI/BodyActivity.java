@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import me.johnkagga.funbook.R;
 
 public class BodyActivity extends ActionBarActivity {
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
