@@ -1,5 +1,7 @@
 package me.johnkagga.funbook.Model;
 
+import android.graphics.Color;
+
 /**
  * Created by John Kagga on 7/5/2015.
  */
@@ -37,5 +39,13 @@ public class FactPage {
 
     public Choice getChoice2() {
         return mChoice2;
+    }
+
+    /*
+        This method converts a hex string into an int
+     */
+    public int factColor(String color){
+       return Color.parseColor(color);
+
     }
 }
