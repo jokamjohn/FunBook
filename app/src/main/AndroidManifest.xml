@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".UI.BodyActivity"
+            android:label="@string/title_activity_body"
+            android:parentActivityName=".UI.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.johnkagga.funbook.UI.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

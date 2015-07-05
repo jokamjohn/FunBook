@@ -49,6 +49,12 @@ public class FactBook {
         mFactPage[10] = new FactPage("Fact 11","Your hair grows more quickly in warm weather than in cold weather.","#637a91",
                 new Choice("Fact name",1),new Choice("next fact name",2));
     }
+    /*
+    method to get the fact page
+     */
+    public FactPage getPage (int pageNumber){
+        return mFactPage[pageNumber];
+    }
 }
 
 
