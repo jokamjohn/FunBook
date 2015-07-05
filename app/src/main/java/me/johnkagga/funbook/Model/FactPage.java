@@ -1,4 +1,4 @@
-package me.johnkagga.funbook;
+package me.johnkagga.funbook.Model;
 
 /**
  * Created by John Kagga on 7/5/2015.

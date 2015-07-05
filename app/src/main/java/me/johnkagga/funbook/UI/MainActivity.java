@@ -1,9 +1,11 @@
-package me.johnkagga.funbook;
+package me.johnkagga.funbook.UI;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import me.johnkagga.funbook.R;
 
 
 public class MainActivity extends ActionBarActivity {
